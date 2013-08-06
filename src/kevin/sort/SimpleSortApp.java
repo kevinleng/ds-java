@@ -11,22 +11,35 @@ import java.util.Random;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleSortApp {
+    public static final int SIZE = 10000;
 
     public static void main(String[] args){
-        int[] array = new int[10];
+        int[] array = new int[SIZE];
         Random random = new Random();
+        long start,end;
 
-        for(int i=0;i<10;i++){
-            array[i] = random.nextInt(100);
+        for(int i=0;i<SIZE;i++){
+            array[i] = random.nextInt(SIZE);
         }
 
         System.out.println(Arrays.toString(array));
 
+        start = System.currentTimeMillis();
         SimpleSort.bubbleSort(array);
+        end = System.currentTimeMillis();
+        System.out.println("bubbleSort cost time: "+(end-start) +"ms");
         System.out.println(Arrays.toString(array));
+
+        start = System.currentTimeMillis();
         SimpleSort.selectSort(array);
+        end = System.currentTimeMillis();
+        System.out.println("bubbleSort cost time: "+(end-start) +"ms");
         System.out.println(Arrays.toString(array));
+
+        start = System.currentTimeMillis();
         SimpleSort.insertSort(array);
+        end = System.currentTimeMillis();
+        System.out.println("bubbleSort cost time: "+(end-start) +"ms");
         System.out.println(Arrays.toString(array));
     }
 }

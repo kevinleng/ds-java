@@ -7,7 +7,10 @@ package kevin.stack;
  * Time: 上午11:07
  * To change this template use File | Settings | File Templates.
  */
-public class Queue {
+public interface Queue<E> {
 
+    boolean enqueue(E e);
+
+    E dequeue();
 
 }
